@@ -5,9 +5,9 @@ Code developed for the manuscript "Evolution in alternating environments with tu
 
 ## Sections:
 
--[Motivation](#motivation)
--[Main takeaway](#main-takeaway)
--[Using the code](#using-the-code)
+- [Motivation](#motivation)
+- [Main takeaway](#main-takeaway)
+- [Using the code](#using-the-code)
 
 ## Motivation
 
