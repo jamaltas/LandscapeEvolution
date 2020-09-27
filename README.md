@@ -23,57 +23,57 @@ The code defines a class "Landscape".
 
 Attributes:
 
-N : int
+N : int  
   Lenth of the bit sequence. A fitness landscape has 2^N genotypes.
 
-sigma : float
+sigma : float  
   Width of the normal distribution used to add noise to the landscape.
 
-Bs : list
+Bs : list  
   A list of landscapes correlated with the current landscape. This attribute is not initialized until the method "generate_correlated_landscapes" is called.
   
-ls : ndarray (dim 2^N)
+ls : ndarray (dim 2^N)  
   This is the array of fitness values for the current landsacpe. 
   
-TM : ndarray (dim 2^N x 2^N)
+TM : ndarray (dim 2^N x 2^N)  
   The transition matrix for the landscape. As N gets large TMs can grow to be huge. Due to this, TM will not be set unless the method "get_TM" is called with store=True.
   
 Methods:
 
-get_TM(store=False)
+get_TM(store=False)  
   Returns the transition matrix for the landscape. Generates the TM if it was not already stored.
   
-find_max_indices()
+find_max_indices()  
   Returns a list of indices of maximum fitness values in the landscape.
   
-find_min_indices()
+find_min_indices()  
   Returns a list of indices of minimum fitness values in the landscape.
   
-evolve(steps, store_TM=False)
+evolve(steps, store_TM=False)  
   Impelements single landscape evolution on this landscape; returns a vector of genotype occupation probabilities.
 
-evolve_switching(B, steps, store_TM=False)
+evolve_switching(B, steps, store_TM=False)  
   Implements paired landscape evolution on this landscape and a B landscape; returns a vector of genotype occupation probabilities.
   
-calc_fitness(steps, store_TMs=True)
+calc_fitness(steps, store_TMs=True)  
   Calculates fitness achieved after steps rounds of evolution in the single landscape case and paired landscape cases for each of the Bs.
   
-graph(p=None, verbose=False)
+graph(p=None, verbose=False)  
   Generates a graph representation of this landscape on the currently active matplotlib figure.
   
-generate_correlated_landscapes(correl, without_shared_max=False, only_shared_max=False)
+generate_correlated_landscapes(correl, without_shared_max=False, only_shared_max=False)  
   Generates and returns a list of paired B landscapes with correlations specified in correl; sets the Bs attribute of this landscape.
 
-calc_nonzero_steadystate_prob(steps)
+calc_nonzero_steadystate_prob(steps)  
   Computes the fraction of nonzero probability genotypes (out of the total number of genotypes) in the probability vector after steps rounds of evolution.
   
-average_mutations(steps)
-  Returns the average number of mutations away from the initial state with nonzero probabilities. Uses smaller epsilon than calc_nonzero_steadystate_prob
+average_mutations(steps)  
+  Returns the average number of mutations away from the initial state with nonzero probabilities. Uses smaller epsilon than calc_nonzero_steadystate_prob.
   
-only_max_fit(self, Bs=None)
+only_max_fit(self, Bs=None)  
   Calculates average fitness of the maximums in the A landscape if Bs=None, or a list of the average fitness of shared maximums in the A and B landscapes for each B in Bs.
   
-get_steadystate_rounds(correl)
-  Calculates number of steps to reach steady state for paired landscape evolution
+get_steadystate_rounds(correl)  
+  Calculates number of steps to reach steady state for paired landscape evolution.
 
 
