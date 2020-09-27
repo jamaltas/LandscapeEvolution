@@ -21,7 +21,7 @@ We find that for largely positively correlated landscapes, periodic cycling incr
 
 The code defines a class "Landscape". 
 
-Attributes:
+<ins>Attributes:</ins>
 
 N : int  
   Lenth of the bit sequence. A fitness landscape has 2^N genotypes.
@@ -38,7 +38,7 @@ ls : ndarray (dim 2^N)
 TM : ndarray (dim 2^N x 2^N)  
   The transition matrix for the landscape. As N gets large TMs can grow to be huge. Due to this, TM will not be set unless the method "get_TM" is called with store=True.
   
-Methods:
+<ins>Methods:</ins>
 
 get_TM(store=False)  
   Returns the transition matrix for the landscape. Generates the TM if it was not already stored.
