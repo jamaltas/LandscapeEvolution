@@ -36,9 +36,9 @@ class Landscape:
     get_TM(store=False)
         Returns the transition matrix for the Landscape. Generates the TM if it was not already stored.
     find_max_indices()
-        Returns a list of indicies of maximum fitness values in the Landscape.
+        Returns a list of indices of maximum fitness values in the Landscape.
     find_min_indices()
-        Returns a list of indicies of minimum fitness values in the Landscape.
+        Returns a list of indices of minimum fitness values in the Landscape.
     evolve(steps, store_TM=False)
         Implements single landscape evolution on this landscape; returns a vector of genotype occupation probabilities
     evolve_switching(B, steps, store_TM=False)
